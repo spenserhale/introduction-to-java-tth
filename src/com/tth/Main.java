@@ -3,6 +3,20 @@ package com.tth;
 public class Main {
 
     public static void main(String[] args) {
+        Milk milk = new Milk();
+        Oranges oranges = new Oranges();
+
+        Box<Milk> boxOfMilk = new Box<>();
+        Box<Oranges> boxOfOranges = new Box<>();
+
+        boxOfMilk.add(milk);
+        boxOfOranges.add(oranges);
+
+        boxOfMilk.remove().drink();
+        boxOfOranges.remove().juggle();
+    }
+
+    private static void interfaceExamples() {
         // Create Objects
         ShopKeeper shopKeeper = new ShopKeeper("Larry");
         Teacup teacup = new Teacup();
