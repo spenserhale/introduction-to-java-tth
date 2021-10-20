@@ -1,14 +1,25 @@
 package com.tth;
 
-import java.io.Console;
-
 public class Main {
 
     public static void main(String[] args) {
-        Console console = System.console();
-        if(console == null) {
-            System.exit(1);
+        Object[] list = {new Dog(), new DogFod()};
+
+        // With Variable
+        Dog dog = (Dog) list[0];
+        dog.makeSound();
+
+        // Anonymous
+        ((Dog)list[0]).makeSound();
+
+        // instanceof example
+        for (Object object : list) {
+            if(object instanceof Animal) {
+                ((Animal) object).makeSound();
+            }
         }
-        console.printf("Hello World");
+
+        // Base Object Methods
+        System.out.println(dog.toString());
     }
 }
